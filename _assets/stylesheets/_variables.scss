@@ -7,8 +7,10 @@
 
 $sans-serif: "Lato", Helvetica, Arial, sans-serif;
 $serif: "Cormorant Garamond", Courier, serif;
-$base-font-family: $sans-serif;
-$base-font-weight: 400;
+$noto-sans: "notokr", sans-serif;
+$base-font-family: $noto-sans;
+//$base-font-family: $sans-serif;
+$base-font-weight: 300;
 $base-font-weight-bold: 700;
 
 // Colors
