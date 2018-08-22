@@ -143,7 +143,7 @@ comment에서 `HTML 4.01 spec`에서 정의한 identifier 형식을 만족시키
 그럼 `[a-z](-?[a-z0-9]+)*` 패턴을 만족하지 못하는 경우는 쓸쓸히 empty identifier를 부여받고 평생 anonymous로 살아가야 할까? 😢
 
 ## Unicode string to byte stream
- ascii character를 1byte(`0x00~0x7F`)로 표현할 수 있는 것처럼, unicode 또한 >>*16진수로 이루어진 byte stream*<<으로 표현할 수 있다. (ex. `흥부` to `0xD7650xBD80`) 
+ ascii character를 1byte(`0x00~0x7F`)로 표현할 수 있는 것처럼, unicode 또한 >>*16진수로 이루어진 byte stream*<<으로 표현할 수 있다. (ex. `페퍼로니` to `0xD398xD37C0xB85C0xB2C8`) 
  
  ***"그렇다면 unicode byte stream을 string으로 떠서 indentifier로 사용할 수 있지 않을까?"***
  
