@@ -29,6 +29,13 @@
         </a>
       </li>
     {% endif %}
+    {% if site.social.wakatime %}
+      <li>
+        <a href="https://wakatime.com/{{ site.social.wakatime }}" rel="noreferrer noopener" target="_blank" title="WakaTime">
+          {% include svg-icon.html icon="wakatime" %}
+        </a>
+      </li>
+    {% endif %}
     {% if site.social.github %}
       <li>
         <a href="https://github.com/{{ site.social.github }}" rel="noreferrer noopener" target="_blank" title="GitHub">

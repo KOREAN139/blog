@@ -19,10 +19,10 @@ social:
   dribbble: # Add your Dribbble handle
   facebook: # Add your Facebook handle
   flickr: # Add your Flickr handle
-  github: KOREAN139
+  github: "KOREAN139"
   linkedin: # Add your LinkedIn handle
   twitter: # Add your Twitter handle
-  email: korean139@gmail.com 
+  email: "korean139@gmail.com"
   bitcoin: # Add your Bitcoin link or address
   ethereum: # Add your Ethereum link or address
   gitlab: # Add your GitLab handle
@@ -32,12 +32,13 @@ social:
   tumblr: # Add your Tumblr handle
   bitbucket: # Add your Bitbucket handle
   docker: # Add your Docker Hub handle
-  instagram: ew_139
+  instagram: "ew_139"
   keybase: # Add your Keybase handle
   medium: # Add your Medium handle
   spotify: # Add your Spotify handle
   stackoverflow: # Add your Stack Overflow ID number
   steam: # Add your Steam handle
+  wakatime: "@139"
 
 
 # Important settings (change at own risk)
