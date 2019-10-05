@@ -3,7 +3,7 @@ layout: post
 title: "The Secret Sharer:<br>Measuring Unintended Neural Network Memorization & Extracting Secrets"
 description: "Interesting paper about neural network"
 
-tags: [machine learning, security]
+tags: [machine-learning, security]
 ---
 
 [UDC2018](https://udc.upbit.com/2018/) 참석 중, 흥미로운 논문을 발견했다. Dawn Song 교수님이 [Oasis](https://www.oasislabs.com)에 관해 이야기 하시다 언급한 [논문](https://arxiv.org/abs/1802.08232)인데, *Unintended neural network memorization* 에 관련된 내용이다.
