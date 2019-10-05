@@ -1,4 +1,0 @@
----
-slug: sphinx
-name: sphinx
----

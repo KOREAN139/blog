@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>¯\_(ツ)_/¯ | Journey to patch docutils</title>
+  <meta name="description" content="Nekoyume to sphinx, sphinx to docutils">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Journey to patch docutils">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://korean139.github.io/blog/blog/posts/journey-to-patch-docutils">
+  <meta property="og:description" content="Nekoyume to sphinx, sphinx to docutils">
+  <meta property="og:site_name" content="¯\_(ツ)_/¯">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://korean139.github.io/blog/blog/posts/journey-to-patch-docutils">
+  <meta name="twitter:title" content="Journey to patch docutils">
+  <meta name="twitter:description" content="Nekoyume to sphinx, sphinx to docutils">
+
+  
+    <meta property="og:image" content="https://korean139.github.io/blog/blog/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://korean139.github.io/blog/blog/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://korean139.github.io/blog/blog/feed.xml" type="application/rss+xml" rel="alternate" title="¯\_(ツ)_/¯ Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/blog/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/blog/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" title="light" id="light" href="/blog/assets/light-2ed07da67517b629467203ab75e012eec702ac0f653011a63c47a3b30fe6b319.css">
+      <link rel="stylesheet" type="text/css" title="dark" id="dark" href="/blog/assets/dark-7519a6a591b2012a23f61ae5b0fd4b9b467e2a3cc20ea6fa3866a6af51c7ef61.css" disabled="true">
+    
+
+  
+
+</head>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/blog/" class="header-logo" title="¯\_(ツ)_/¯">¯\_(ツ)_/¯</a>
+  <ul class="header-links">
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/KOREAN139" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/blog/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/blog/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/sangguhan" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/blog/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/blog/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://instagram.com/nerdipapi" rel="noreferrer noopener" target="_blank" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+  <use href="/blog/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram" xlink:href="/blog/assets/instagram-37f85bc75b43ecc4c114d9a46f846327fe13c5893787c6afbcfef9d30d58bd9e.svg#icon-instagram"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:korean139@gmail.com" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/blog/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/blog/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a onclick="toggle()" title="Toggle Theme">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-theme">
+  <use href="/blog/assets/theme-66869e0bf8dab34bae1c86bda400327b772e0be69e8dc28d3ede896e771320ed.svg#icon-theme" xlink:href="/blog/assets/theme-66869e0bf8dab34bae1c86bda400327b772e0be69e8dc28d3ede896e771320ed.svg#icon-theme"></use>
+</svg>
+
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>Journey to patch docutils</h1>
+            <p>Nekoyume to sphinx, sphinx to docutils</p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    August 19, 2018
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      6 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/blog/tag/opensource" title="See all posts with tag 'opensource'">opensource</a>
+    
+      
+      <a href="/blog/tag/contribution" title="See all posts with tag 'contribution'">contribution</a>
+    
+      
+      <a href="/blog/tag/nekoyume" title="See all posts with tag 'nekoyume'">nekoyume</a>
+    
+      
+      <a href="/blog/tag/sphinx" title="See all posts with tag 'sphinx'">sphinx</a>
+    
+      
+      <a href="/blog/tag/docutils" title="See all posts with tag 'docutils'">docutils</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p><a href="https://www.pycon.kr/2018/">PYCON KOREA 2018</a>의 컨퍼런스 일정을 구경하던 중, <a href="https://nekoyu.me">nekoyume</a>라는 프로젝트를 발견했다.
+블록체인 + RPG라니, 그냥 지나치기 어려운 조합이지 않은가!</p>
+
+<p>플레이 컨셉과 프로젝트 구현을 위해 사용한 기술 등 정보를 얻기 위해 <a href="https://docs.nekoyu.me/white_paper_ko.html">nekoyume 백서</a>를 읽기 시작했다.</p>
+
+<h1 id="missing-herf-links"><strong>Missing herf links</strong></h1>
+<p>백서를 훑어보던 중, 사이드바의 링크가 제대로 동작하지 않는 이슈가 발생했다. 원인을 확인하기 위해 HTML 소스를 훑어봤는데, <code class="highlighter-rouge">href="#"</code>와 같이 <em>internal link</em>가 제대로 링크되어있지 않음을 확인할 수 있었다.</p>
+
+<p>왜 이슈가 발생하는지 root cause를 찾기 위해 더 훑어본 결과, 몇 가지 규칙을 찾을 수 있었다.</p>
+
+<p><a id="rules"></a></p>
+<ol>
+  <li>모든 heading tag는 wrapping div가 있다.</li>
+  <li>wrapping <strong>div의 id는 heading tag 내부의 text와 동일</strong>하다. <br />(단, text 내의 공백은 <code class="highlighter-rouge">-</code>(dash)로 대체된다.)</li>
+  <li><strong>(아마도) ascii character, 그중에서도 <code class="highlighter-rouge">[a-z0-9]</code>, 만 id로 등록된다.</strong> <br />즉, <strong>non-ascii character는 모두 drop</strong>된다.</li>
+  <li>사이드바의 <em>internal link</em>는 wrapping div의 id를 이용한다.</li>
+</ol>
+
+<p>heading tag 내부의 text에 <code class="highlighter-rouge">[a-z0-9]</code>가 한 글자도 없을 시 <code class="highlighter-rouge">&lt;div class="section" id=""&gt;</code>와 같이 id가 »빈 문자열«이였고, 이 경우 <code class="highlighter-rouge">href="#"</code>와 같이 <em>internal link</em>가 제대로 링크되지 않은 것이었다.</p>
+
+<h1 id="solve-the-issue"><strong>Solve the issue</strong></h1>
+<p>위의 규칙을 찾고 나서, 한 가지 아이디어를 떠올릴 수 있었다.</p>
+
+<p>2번 규칙을 다시 말하면, heading tag 내부에 <code class="highlighter-rouge">[a-z0-9]</code>를 만족하는 글자가 하나라도 존재할 시 id가 생성된다고 말할 수 있다. 즉, <strong>heading tag 내부에 조건을 만족하는 ascii character를 포함하는 comment를 작성</strong>하면 위 이슈를 해결할 수 있다!</p>
+
+<p>단, <code class="highlighter-rouge">.md</code>, <code class="highlighter-rouge">.html</code> 두 파일 포맷에서 comment 형식을 만족시켜야 하기 때문에 <code class="highlighter-rouge">&lt;!-- --&gt;</code> 스타일을 이용해야 한다.</p>
+
+<p>위 아이디어를 이용해 <a href="https://github.com/nekoyume/nekoyume/pull/92">PR</a>을 보냈고, nekoyume:master에 merge되어 본 이슈는 해결된 상태이다. (아직 nekoyume:gh-pages가 업데이트되지 않은 것으로 보아 merge이후 deploy는 진행하지 않은 것 같다.)</p>
+
+<h1 id="journey-to-resolve-the-issue"><strong>Journey to resolve the issue</strong></h1>
+<p>하지만 어떻게 이슈를 근본적으로 해결할 수 있을지 고민해보기 위해서, 백서가 빌드되는 과정을 하나하나 쫓아가며 모든 과정을 의심해보기로 했다.</p>
+
+<h2 id="environment">environment</h2>
+<p>백서의 내용은 markdown을 통해 작성되었고, <a href="https://github.com/sphinx-doc/sphinx">sphinx</a>를 통해 자동으로 빌드하고 있었다. markdown-based였기 때문에 sphinx 내부 빌드 과정에서 <a href="https://recommonmark.readthedocs.io/en/latest/index.html">recommonmark</a>의 CommonMarkParser를 이용해 markdown을 parsing하고 있었다.</p>
+
+<h2 id="recommonmark"><a href="https://recommonmark.readthedocs.io/en/latest/index.html">recommonmark</a></h2>
+<p>처음으로 의심했던 건 »<em>markdown parsing 과정에서 non-ascii character의 누락 가능성</em>« 이었다.
+ 하지만 정상적으로 parsing 이후에도 heading text가 유지되는 것을 확인했고, recommonmark는 결백한 친구임을 알아냈다. (parsing 과정에서는 id, internal link가 생성되지 않는다)</p>
+
+<h2 id="sphinx"><a href="https://github.com/sphinx-doc/sphinx">sphinx</a></h2>
+<p>다음으로 의심한 친구는 sphinx였다. »<em>build 과정에서 non-ascii character의 누락 가능성</em>«에 중점을 두고 쫓아가봤다. 다음 <a href="https://github.com/sphinx-doc/sphinx/blob/004b68f281dbad6e7598c8c2f56945bb3bc07107/sphinx/writers/html.py">코드</a>에서 힌트를 발견할 수 있었다.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"> <span class="k">def</span> <span class="nf">depart_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="c1"># type: (nodes.Node) -&gt; None
+</span>        <span class="n">close_tag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">permalink_text</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">add_permalinks</span> <span class="ow">and</span>
+           <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="nb">hasattr</span><span class="p">(</span><span class="s">'ids'</span><span class="p">)</span> <span class="ow">and</span> <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="s">'ids'</span><span class="p">]):</span>
+            <span class="c1"># add permalink anchor
+</span>            <span class="k">if</span> <span class="n">close_tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'&lt;/h'</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_permalink_ref</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">'Permalink to this headline'</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">close_tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'&lt;/a&gt;&lt;/h'</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">u'&lt;/a&gt;&lt;a class="headerlink" href="#</span><span class="si">%</span><span class="s">s" '</span> <span class="o">%</span>
+                                 <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="s">'ids'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span>
+                                 <span class="s">u'title="</span><span class="si">%</span><span class="s">s"&gt;</span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span>
+                                     <span class="n">_</span><span class="p">(</span><span class="s">'Permalink to this headline'</span><span class="p">),</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">permalink_text</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">nodes</span><span class="o">.</span><span class="n">table</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'&lt;/span&gt;'</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_permalink_ref</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">'Permalink to this table'</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">nodes</span><span class="o">.</span><span class="n">table</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'&lt;/span&gt;'</span><span class="p">)</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">href="#%s"</code>에서 <code class="highlighter-rouge">%s</code>에 들어가는 문자열은 <code class="highlighter-rouge">node.parent['ids']</code>, 즉 <strong>class node ‘ids’ attribute 값</strong>이었다!</p>
+
+<p>여기서 사용되는 <code class="highlighter-rouge">class node</code>는 sphinx가 정의한 것이 아니라, »<em>sphinx가 가져다 쓰고 있는 오픈소스인 <a href="http://docutils.sourceforge.net">docutils</a>의 자료구조</em>«였고 ‘ids’ attribute또한 docutils에서 assign하고 있었다. sphinx 또한 결백한 친구였음을 알아냈다.</p>
+
+<h2 id="docutils"><a href="http://docutils.sourceforge.net">docutils</a></h2>
+<p>이제 ‘ids’ attribute가 어떤 과정으로 assign되는지 뜯어볼 차례다. <code class="highlighter-rouge">class node</code>가 정의된 <a href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/docutils/nodes.py">소스 파일</a>에서 다음과 같은 comment를 확인 할 수 있었다.</p>
+
+<blockquote>
+  <p>There are two special attributes: ‘ids’ and ‘names’.  Both are<br />
+    lists of unique identifiers, and names serve as human interfaces<br />
+    to IDs.  Names are case- and whitespace-normalized (see the<br />
+    fully_normalize_name() function), and IDs conform to the regular<br />
+    expression <code class="highlighter-rouge">[a-z](-?[a-z0-9]+)*</code> (see the make_id() function).</p>
+</blockquote>
+
+<p><strong><em>범인을 찾았다!</em></strong></p>
+
+<p>위에서 찾았던 <a href="#rules">규칙</a>이 얼추 맞았다. case- and whitespace-normalized 이후 regex (<code class="highlighter-rouge">[a-z](-?[a-z0-9]+)*</code>)에 맞는 형식으로 ‘ids’ attribute를 assign하고 있었다.</p>
+
+<p><a href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/docutils/nodes.py#l2093">make_id()</a> 함수를 보면 보다 명확하게 확인할 수 있다.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"> <span class="k">def</span> <span class="nf">make_id</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="s">"""
+    Convert `string` into an identifier and return it.
+
+    Docutils identifiers will conform to the regular expression
+    ``[a-z](-?[a-z0-9]+)*``.  For CSS compatibility, identifiers (the "class"
+    and "id" attributes) should have no underscores, colons, or periods.
+    Hyphens may be used.
+
+    - The `HTML 4.01 spec`_ defines identifiers based on SGML tokens:
+
+          ID and NAME tokens must begin with a letter ([A-Za-z]) and may be
+          followed by any number of letters, digits ([0-9]), hyphens ("-"),
+          underscores ("_"), colons (":"), and periods (".").
+
+    - However the `CSS1 spec`_ defines identifiers based on the "name" token,
+      a tighter interpretation ("flex" tokenizer notation; "latin1" and
+      "escape" 8-bit characters have been replaced with entities)::
+
+          unicode     </span><span class="se">\\</span><span class="s">[0-9a-f]{1,4}
+          latin1      [&amp;iexcl;-&amp;yuml;]
+          escape      {unicode}|</span><span class="se">\\</span><span class="s">[ -~&amp;iexcl;-&amp;yuml;]
+          nmchar      [-a-z0-9]|{latin1}|{escape}
+          name        {nmchar}+
+
+    The CSS1 "nmchar" rule does not include underscores ("_"), colons (":"),
+    or periods ("."), therefore "class" and "id" attributes should not contain
+    these characters. They should be replaced with hyphens ("-"). Combined
+    with HTML's requirements (the first character must be a letter; no
+    "unicode", "latin1", or "escape" characters), this results in the
+    ``[a-z](-?[a-z0-9]+)*`` pattern.
+
+    .. _HTML 4.01 spec: http://www.w3.org/TR/html401
+    .. _CSS1 spec: http://www.w3.org/TR/REC-CSS1
+    """</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="nb">id</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">id</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">_non_id_translate_digraphs</span><span class="p">)</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nb">id</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">_non_id_translate</span><span class="p">)</span>
+    <span class="c1"># get rid of non-ascii characters.
+</span>    <span class="c1"># 'ascii' lowercase to prevent problems with turkish locale.
+</span>    <span class="nb">id</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s">'NFKD'</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span><span class="o">.</span>\
+         <span class="n">encode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">,</span> <span class="s">'ignore'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">)</span>
+    <span class="c1"># shrink runs of whitespace and replace by hyphen
+</span>    <span class="nb">id</span> <span class="o">=</span> <span class="n">_non_id_chars</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">'-'</span><span class="p">,</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">id</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">_non_id_at_ends</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+ </code></pre></figure>
+
+<p>comment에서 <code class="highlighter-rouge">HTML 4.01 spec</code>에서 정의한 identifier 형식을 만족시키기 위해 이런 과정을 거쳐야 함을 간략하게 설명해준다.</p>
+
+<p>그럼 <code class="highlighter-rouge">[a-z](-?[a-z0-9]+)*</code> 패턴을 만족하지 못하는 경우는 쓸쓸히 empty identifier를 부여받고 평생 anonymous로 살아가야 할까? 😢</p>
+
+<h2 id="unicode-string-to-byte-stream">Unicode string to byte stream</h2>
+<p>ascii character를 1byte(<code class="highlighter-rouge">0x00~0x7F</code>)로 표현할 수 있는 것처럼, unicode 또한 »<em>16진수로 이루어진 byte stream</em>«으로 표현할 수 있다. (ex. <code class="highlighter-rouge">페퍼로니</code> to <code class="highlighter-rouge">0xD3980xD37C0xB85C0xB2C8</code>)</p>
+
+<p><strong><em>“그렇다면 unicode byte stream을 string으로 떠서 indentifier로 사용할 수 있지 않을까?”</em></strong></p>
+
+<p>python2에서 unicode의 byte stream을 string으로 만드는 건 간단하게 할 수 있다.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"> <span class="n">byte_stream_str</span> <span class="o">=</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">unicode_string</span><span class="p">))</span>
+ </code></pre></figure>
+
+<p>unicode 문자열 각 글자를 16진수로 나타낸 다음, 전부 이어붙이면 된다. (위 코드)</p>
+
+<p>이렇게 만들어낸 문자열을 바로 identifier로 사용하고 싶지만, <code class="highlighter-rouge">(0x[0-9a-f])+</code> 꼴이기 때문에 <code class="highlighter-rouge">HTML 4.01 spec</code>에서 정의한 identifier 형식 <code class="highlighter-rouge">must begin with a letter ([A-Za-z])</code>를 만족시키기 위해선 문자열의 첫 부분을 알파벳으로 바꿔줘야 한다.</p>
+
+<p>패치 작성시에 <code class="highlighter-rouge">.replace('0x', 'u')</code>를 추가해 <code class="highlighter-rouge">0x</code>를 <code class="highlighter-rouge">u</code>로 바꾸는 방식을 적용했으나 (최종 문자열은 <code class="highlighter-rouge">(u[0-9a-f])+</code>꼴이 된다), 문자열의 첫 글자를 알파벳으로 바꾸거나, 알파벳을 문자열의 첫 부분에 삽입하는 방식으로 진행해도 괜찮다.</p>
+
+<h2 id="patch"><a href="https://sourceforge.net/p/docutils/patches/143/">Patch</a></h2>
+<p>make_id() 내부에서 <strong>non-ascii character를 전부 제거한 뒤, 빈 문자열만 남게 되는 경우</strong> 위 코드를 통해 <strong>byte stream을 identifier로 return</strong>하도록 수정하여 패치를 제출했다. (<a href="https://github.com/KOREAN139/docutils_patch_143/blob/master/make_id.patch">제출한 패치</a>)</p>
+
+<h1 id="finishing-the-journey"><strong>Finishing the journey</strong></h1>
+<p>nekoyume 프로젝트 구경에서 샛길로 빠져 docutils에 patch submit을 하기까지의 (…) 여정을 간략하게 정리해봤다. 작은 이슈의 원인을 찾아 거꾸로 올라가며 여러 프로젝트의 소스를 분석하고, 각 과정에서 의심점을 생각하고, 그 의심점을 해결해 나가면서 root cause를 찾아내고, 최종적으로 어떻게 이슈를 해결할지 아이디어를 고안해내는 과정이 굉장히 재밌었다.</p>
+
+<p>제출한 패치가 (approve, decline) 중 어느 선택을 받게 될 지 모르겠지만, 아마 approve 되더라도 docutils가 relase를 자주 하지 않는 오픈소스기 때문에 현재 docutils를 사용하는 다른 오픈소스에 적용되기까지는 오랜 시간이 걸리지 않을까 싶다.</p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=Journey+to+patch+docutils%20-%20https://korean139.github.io/blog/blog/posts/journey-to-patch-docutils" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://korean139.github.io/blog/blog/posts/journey-to-patch-docutils" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div>
+
+          <!-- using utterances for comment -->
+          <script src="https://utteranc.es/client.js"
+                  repo="korean139/blog"
+                  issue-term="url"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+  <!--<a href="/blog/about" title="About me">한상구</a>-->
+  Maintained by <a href="https://korean139.github.io">한상구</a>
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script type="text/javascript" src="/blog/assets/vendor-2c224c53eb697c739f9490c38819a72184f09472739fd9e492272ef174090428.js"></script>
+
+
+  <script type="text/javascript" src="/blog/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js"></script>
+
+
+
+  <script type="text/javascript" src="/blog/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js"></script>
+
+
+<script type="text/javascript" src="/blog/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js"></script>
+
+
+  <script type="text/javascript" src="/blog/assets/themetoggle-df0d3d73164dc26dffbd630182ae4d0dfa7bee6b694a2b5d565d73595b582bbf.js"></script>
+
+</body>
+</html>

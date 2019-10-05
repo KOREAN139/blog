@@ -1,4 +1,0 @@
----
-slug: nekoyume
-name: nekoyume
----
