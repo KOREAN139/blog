@@ -1,4 +1,0 @@
----
-slug: docutils
-name: docutils
----

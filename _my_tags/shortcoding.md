@@ -1,4 +1,0 @@
----
-slug: shortcoding
-name: shortcoding
----

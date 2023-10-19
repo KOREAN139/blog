@@ -1,20 +1,66 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>¯\_(ツ)_/¯</title>
+    <description></description>
+    <link>https://korean139.github.io/blog</link>
+    <atom:link href="https://korean139.github.io/blog/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Imagoworks (4) Survive as Noob</title>
+        <description>뭐라도 받아라!</description>
+        <pubDate>Fri, 13 Oct 2023 00:00:00 +0900</pubDate>
+        <link>https://korean139.github.io/blog/blog/posts/imago-4</link>
+        <guid isPermaLink="true">https://korean139.github.io/blog/blog/posts/imago-4</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Imagoworks (3) Survive as Noob</title>
+        <description>아무튼 받아라!</description>
+        <pubDate>Fri, 06 Oct 2023 00:00:00 +0900</pubDate>
+        <link>https://korean139.github.io/blog/blog/posts/imago-3</link>
+        <guid isPermaLink="true">https://korean139.github.io/blog/blog/posts/imago-3</guid>
+      </item>
+    
+      <item>
+        <title>Imagoworks (2) Survive as Noob</title>
+        <description>중고 받아라!</description>
+        <pubDate>Fri, 22 Sep 2023 00:00:00 +0900</pubDate>
+        <link>https://korean139.github.io/blog/blog/posts/imago-2</link>
+        <guid isPermaLink="true">https://korean139.github.io/blog/blog/posts/imago-2</guid>
+      </item>
+    
+      <item>
+        <title>Imagoworks (1) Survive as Noob</title>
+        <description>중고신입 받아라!</description>
+        <pubDate>Fri, 15 Sep 2023 00:00:00 +0900</pubDate>
+        <link>https://korean139.github.io/blog/blog/posts/imago-1</link>
+        <guid isPermaLink="true">https://korean139.github.io/blog/blog/posts/imago-1</guid>
+      </item>
+    
+      <item>
+        <title>The Secret Sharer:&lt;br&gt;Measuring Unintended Neural Network Memorization &amp; Extracting Secrets</title>
+        <description>Interesting paper about neural network</description>
+        <pubDate>Mon, 17 Sep 2018 00:00:00 +0900</pubDate>
+        <link>https://korean139.github.io/blog/blog/posts/the-secret-sharer</link>
+        <guid isPermaLink="true">https://korean139.github.io/blog/blog/posts/the-secret-sharer</guid>
+      </item>
+    
+      <item>
+        <title>Journey to patch docutils</title>
+        <description>Nekoyume to sphinx, sphinx to docutils</description>
+        <pubDate>Sun, 19 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://korean139.github.io/blog/blog/posts/journey-to-patch-docutils</link>
+        <guid isPermaLink="true">https://korean139.github.io/blog/blog/posts/journey-to-patch-docutils</guid>
+      </item>
+    
+      <item>
+        <title>Short coding technique</title>
+        <description>Some kind of tricks in C</description>
+        <pubDate>Tue, 14 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://korean139.github.io/blog/blog/posts/short-coding-technique</link>
+        <guid isPermaLink="true">https://korean139.github.io/blog/blog/posts/short-coding-technique</guid>
+      </item>
+    
   </channel>
 </rss>

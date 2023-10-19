@@ -1,4 +1,0 @@
----
-slug: IaC
-name: IaC
----

@@ -1,4 +1,0 @@
----
-slug: imagoworks
-name: Imagoworks
----
